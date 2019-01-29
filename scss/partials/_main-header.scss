@@ -1,0 +1,9 @@
+.main-header {
+    background-color: red;
+    > .logo {
+        &::after {
+            display: block;
+            content: "<rodrigocintrao />"
+        }
+    }
+}

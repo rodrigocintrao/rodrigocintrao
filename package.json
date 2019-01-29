@@ -26,6 +26,8 @@
     "gulp-sourcemaps": "^2.6.4"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.7.0",
+    "font-awesome": "^4.7.0",
     "normalize.scss": "^0.1.0"
   }
 }

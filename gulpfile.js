@@ -8,13 +8,18 @@ var gulp = require("gulp"),
 
 //CLEAN CSS:
 gulp.task("clean-css-style", function() {
-  return del("./code/css/style.css");
+  return del("./dist/css/style.css");
 });
 
 //CLEAN CSS VENDOR:
 gulp.task("clean-css-vendor", function() {
-    return del("./code/css/vendor.css");
-  });
+  return del("./dist/css/vendor.css");
+});
+
+//CLEAN FONTS:
+gulp.task("clean-fonts", function() {
+  return del("./dist/fonts/**/*");
+});
 
 // SASS:
 gulp.task("sass", ["clean-css-style"], function() {
@@ -24,7 +29,7 @@ gulp.task("sass", ["clean-css-style"], function() {
     .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
     .pipe(autoprefixer({ browsers: "last 3 versions" }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest("./css/"));
+    .pipe(gulp.dest("./dist/css/"));
 });
 
 // SASS VENDOR:
@@ -35,31 +40,37 @@ gulp.task("sass-vendor", ["clean-css-vendor"], function() {
       .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
       .pipe(autoprefixer({ browsers: "last 3 versions" }))
       .pipe(sourcemaps.write())
-      .pipe(gulp.dest("./css/"));
-  });
+      .pipe(gulp.dest("./dist/css/"));
+});
+
+gulp.task("copy", ["clean-fonts"], function() {
+  gulp.src([
+    "node_modules/@fortawesome/fontawesome-free/webfonts/**/*"
+  ])
+  .pipe(gulp.dest("./dist/fonts/"));
+});
 
 // WATCH:
 gulp.task("watch", function() {
-  return gulp.watch(
-    ["./scss/**/*.scss"]
-  );
+  return gulp.watch(["./scss/**/*.scss"], ["sass"]);
 });
 
 //SERVE
 gulp.task("serve", function() {
   browserSync.init({
     server: {
-      baseDir: ""
+      baseDir: "dist"
     }
   });
 
-  gulp.watch("/**/*").on("change", reload);
+  gulp.watch("./dist/**/*.html").on("change", reload);
 });
 
 // INIT:
 gulp.task("default", [
   "sass",
   "sass-vendor",
+  "copy",
   "watch",
   "serve"
 ]);
