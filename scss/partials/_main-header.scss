@@ -1,9 +1,53 @@
 .main-header {
-    background-color: red;
-    > .logo {
-        &::after {
-            display: block;
-            content: "<rodrigocintrao />"
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    background-color: $white;
+    padding: {
+        top: ($base-number * 8);
+        bottom: ($base-number * 8);
+    }
+    box-shadow: 0 0.25rem 0.125rem 0 rgba($black,0.05);
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        > .logosearch {
+            display: flex;
+            align-items: center;
+    
+            > .logo {
+                color: $curiousBlue;
+                font-size: ($base-number * 14);
+                line-height: 1;
+                margin-right: ($base-number * 2);
+
+                &::after {
+                    display: block;
+                    content: "<rodrigocintrao />"
+                }
+            }
+        }
+
+        > .nav {
+            > .link {
+                font: {
+                    size: 20px;
+                    weight: 600;
+                }
+                line-height: 1;
+                color: $trout;
+                text-decoration: none;
+
+                &:hover, &:focus {
+                    opacity: .8;
+                    outline: none;
+                }
+            }
         }
     }
 }
