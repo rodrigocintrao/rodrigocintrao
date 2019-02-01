@@ -1,41 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Curso HTML e CSS - rodrigocintrao</title>
-    <link href="css/vendor.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-</head>
-<body>
+    <link href="css/vendor.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
     <header class="main-header">
-        <div class="container">
-            <div class="wrapper">
-                <div class="logosearch">
-                    <h1 class="logo">
-                    </h1>
-                    <div class="search-page">
-                        <input type="text" class="input" placeholder="buscar no site..." tabindex="1" />
-                        <buttom class="btn" tabindex="2">
-                            <i class="fas fa-search"></i>
-                        </buttom>
-                    </div>
-                </div>
-                <nav class="nav">
-                    <a href="#" class="link">
-                        login
-                        <i class="fas fa-sign-in-alt"></i>
-                    </a>
-                </nav>
+      <div class="container">
+        <div class="wrapper">
+          <div class="logosearch">
+            <h1 class="logo"></h1>
+            <div class="search-page">
+              <input
+                type="text"
+                class="input"
+                placeholder="buscar no site..."
+                tabindex="1"
+              />
+              <buttom class="btn" tabindex="2">
+                <i class="fas fa-search"></i>
+              </buttom>
             </div>
+          </div>
+          <nav class="nav">
+            <a href="#" class="link">
+              login
+              <i class="fas fa-sign-in-alt"></i>
+            </a>
+          </nav>
         </div>
+      </div>
     </header>
     <main class="main-content">
-
+      <div class="container">
+        <div class="heading-2">
+          <h2 class="title">Cursos</h2>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="course-page">
+              <div class="img-block">
+                <img src="" alt="imagem" />
+                <h3 class="title">HTML e CSS Essencial</h3>
+              </div>
+              <p>
+                Neste curso, o aluno irá aprender os comandos principais do
+                HTML5 e do CSS3, com o objetivo de adquirir uma base sólida para
+                vir a criar sites.
+              </p>
+              <a href="#" class="link">Detalhes do curso</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-    <footer class="main-footer">
-
-    </footer>
-</body>
+    <footer class="main-footer"></footer>
+  </body>
 </html>
