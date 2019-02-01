@@ -1,0 +1,20 @@
+.course-page {
+  padding: $base-number * 3;
+  border: 1px solid $gallery;
+
+  > .imgblock {
+    position: relative;
+
+    > .img {
+      width: 100%;
+    }
+
+    > .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      margin: 0;
+    }
+  }
+}

@@ -6,8 +6,8 @@
   align-items: center;
   background-color: $white;
   padding: {
-    top: ($base-number * 8);
-    bottom: ($base-number * 8);
+    top: ($base-number * 5);
+    bottom: ($base-number * 5);
   }
   box-shadow: 0 0.25rem 0.125rem 0 rgba($black, 0.05);
 
@@ -21,15 +21,11 @@
       align-items: center;
 
       > .logo {
-        color: $curiousBlue;
-        font-size: ($base-number * 14);
-        line-height: 1;
-        margin-right: ($base-number * 2);
-        margin: 0;
+        width: 200px;
+        margin: 0 ($base-number * 8) 0 0;
 
-        &::after {
-          display: block;
-          content: "<rodrigocintrao />";
+        > img {
+          width: 100%;
         }
       }
     }
