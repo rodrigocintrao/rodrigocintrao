@@ -1,6 +1,7 @@
 .course-page {
-  padding: $base-number * 3;
   border: 1px solid $gallery;
+  border-radius: 5px;
+  overflow: hidden;
 
   > .imgblock {
     position: relative;
@@ -16,5 +17,9 @@
       transform: translate(-50%,-50%);
       margin: 0;
     }
+  }
+
+  > .body {
+    padding: $base-number * 3;
   }
 }
